@@ -7,35 +7,37 @@
 
 int main()
 {
-    char operateur;
-    double nombre1, nombre2, resultat;
+	char operateur;
+	int resultat;
+	double resultat_div;
+	int nombre1, nombre2;
 
     printf("Choisissez un opérateur parmi la liste suivante (+, -, *, /, %%): ");
     scanf(" %c", &operateur);
 
     printf("Entrez le premier nombre: ");
-    scanf("%lf", &nombre1);
+    scanf("%d", &nombre1);
     printf("Entrez le second nombre: ");
-    scanf("%lf", &nombre2);
+    scanf("%d", &nombre2);
 
 	if (operateur == '+') {
         resultat = nombre1 + nombre2;
-        printf("Résultat de l'addition: %d\n", resultat);
+        printf("%d %c %d = %d\n", nombre1, operateur, nombre2, resultat);
         
     } else if (operateur == '-') {
         resultat = nombre1 - nombre2;
-        printf("Résultat de la soustraction: %d\n", resultat);
+        printf("%d %c %d = %d\n", nombre1, operateur, nombre2, resultat);
         
     } else if (operateur == '*') {
         resultat = nombre1 * nombre2;
-        printf("Résultat de la multiplication: %d\n", resultat);
+        printf("%d %c %d = %d\n", nombre1, operateur, nombre2, resultat);
         
     } else if (operateur == '/') {
         if (nombre2 == 0) {
             printf("Erreur: Il est impossible de diviser par 0\n");
         } else {
             resultat_div = (double)nombre1 / nombre2;
-            printf("Résultat de la division: %.2lf\n", resultat_div);
+            printf("%d %c %d = %.2f\n", nombre1, operateur, nombre2, resultat_div);
         }
         
     } else if (operateur == '%') {
@@ -43,15 +45,12 @@ int main()
             printf("Erreur: Il est impossible de diviser par 0\n");
         } else {
             resultat = nombre1 % nombre2;
-            printf("Résultat du modulo: %d\n", resultat);
+            printf("%d %c %d = %d\n", nombre1, operateur, nombre2, resultat);
         }
         
     } else {
         printf("Opérateur non reconnu\n");
     }
-
-
-
 
 	exit(0);
 }	
